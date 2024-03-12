@@ -40,7 +40,7 @@ public class Test7MultiPublish extends Test0Base {
 		client2.connect();
 
 		client2.subscribe(TOPIC);
-
+	
 		// allow broker to process subscriptions
 		try {
 			Thread.sleep(2000);
@@ -49,7 +49,7 @@ public class Test7MultiPublish extends Test0Base {
 		}
 
 		client1.publish(TOPIC, "message from client on topic");
-
+		
 		PublishMsg msg1 = (PublishMsg) client1.receive();
 		PublishMsg msg2 = (PublishMsg) client2.receive();
 
